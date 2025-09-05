@@ -1,44 +1,44 @@
-import { useState } from 'react';
-import './SigninForm.css';
-import { useNavigate } from 'react-router-dom'
-const baseURI = import.meta.env.VITE_API_BASE_URL
+import { useState } from "react";
+import "./SigninForm.css";
+import { useNavigate } from "react-router-dom";
+const baseURI = import.meta.env.VITE_API_BASE_URL;
 
 const SigninForm = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(baseURI + 'api/signin', {
-        method: 'POST',
+      const response = await fetch(baseURI + "api/signin", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-        credentials: 'include'
+        credentials: "include",
       });
       if (response.ok) {
-        alert('Connexion réussie');
-        const res = await response.json()
-        if(res.role === 'admin'){
-          navigate('/dashboard')
+        alert("Connexion réussie");
+        const res = await response.json();
+        if (res.role === "admin") {
+          navigate("/dashboard");
         }
       } else {
-        alert('Erreur lors de la connexion');
+        alert("Erreur lors de la connexion");
       }
     } catch (error) {
-      alert('Erreur réseau');
+      alert("Erreur réseau");
     }
   };
 

@@ -1,4 +1,4 @@
-.dashboard-container {
+.vehiclemanagement-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,7 +9,7 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.dashboard-header {
+.vehiclemanagement-header {
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -20,13 +20,13 @@
   border-bottom: 2px solid #3498db;
 }
 
-.dashboard-header h1 {
+.vehiclemanagement-header h1 {
   color: #2c3e50;
   font-size: 2.5rem;
   margin: 0;
 }
 
-.dashboard-stats {
+.vehiclemanagement-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -35,42 +35,42 @@
   max-width: 1200px;
 }
 
-.stat-card {
+.vehicle-card {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   width: 100%;
-  max-width: 350px;
+  max-width: fit-content;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.stat-card:hover {
+.vehicle-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
-.stat-card h3 {
+.vehicle-card h3 {
   color: #3498db;
   font-size: 1.2rem;
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
-.stat-card .stat-value {
+.vehicle-card .vehicle-id {
   font-size: 2.5rem;
   font-weight: bold;
   color: #2c3e50;
   margin-bottom: 0.5rem;
 }
 
-.stat-card .stat-description {
+.vehicle-card .vehicle-clien {
   color: #7f8c8d;
   font-size: 0.9rem;
 }
 
 .vehiclemanagement-actions {
-  margin-top: 2rem;
+  margin-bottom: 2rem;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -95,13 +95,18 @@
   background-color: #2980b9;
 }
 
+.vehicle-infos {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 768px) {
-  .dashboard-header {
+  .vheiclemanagement-header {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .stat-card {
+  .vehicle-card {
     max-width: 100%;
   }
 }
